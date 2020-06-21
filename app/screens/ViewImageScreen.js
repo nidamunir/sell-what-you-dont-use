@@ -1,15 +1,25 @@
 // lib
 import React from "react";
 import { StyleSheet, Text, View, ImageBackground, Image } from "react-native";
-
+import { MaterialCommunityIcons } from "react-native-vector-icons";
 // src
 import colors from "../config/colors";
 
 export const ViewImageScreen = () => {
   return (
     <View style={styles.container}>
-      <View style={styles.closeIcon}></View>
-      <View style={styles.deleteIcon}></View>
+      <MaterialCommunityIcons
+        style={styles.closeIcon}
+        name="close"
+        size={40}
+        color={"white"}
+      ></MaterialCommunityIcons>
+      <MaterialCommunityIcons
+        style={styles.deleteIcon}
+        name="trash-can-outline"
+        size={40}
+        color={"white"}
+      ></MaterialCommunityIcons>
       <Image
         resizeMode="contain"
         style={styles.image}
@@ -25,20 +35,18 @@ const styles = StyleSheet.create({
     backgroundColor: colors.black,
   },
   closeIcon: {
-    backgroundColor: colors.primary,
     width: 50,
     height: 50,
     position: "absolute",
     left: 30,
-    top: 40,
+    top: 20,
   },
   deleteIcon: {
-    backgroundColor: colors.secondary,
     width: 50,
     height: 50,
     position: "absolute",
     right: 30,
-    top: 40,
+    top: 20,
   },
   image: {
     width: "100%",
