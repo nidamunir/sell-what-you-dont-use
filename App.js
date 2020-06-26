@@ -12,9 +12,14 @@ import { MessagesScreen } from "./app/screens/MessagesScreen";
 import { Screen } from "./app/components/Screen";
 import { Icon } from "./app/components/Icon";
 import { ListingsScreen } from "./app/screens/ListingsScreen";
+import { AppTextInput } from "./app/components/AppTextInput";
 
 export default function App() {
-  return <ListingsScreen />;
+  return (
+    <Screen>
+      <AppTextInput icon="email" placeholder="Username" />
+    </Screen>
+  );
 }
 
 const styles = StyleSheet.create({
