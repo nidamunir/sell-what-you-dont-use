@@ -1,5 +1,5 @@
 // lib
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
 
 // src
@@ -13,10 +13,31 @@ import { Screen } from "./app/components/Screen";
 import { Icon } from "./app/components/Icon";
 import { ListingsScreen } from "./app/screens/ListingsScreen";
 import { AppTextInput } from "./app/components/AppTextInput";
+import { AppPicker } from "./app/components/AppPicker";
+
+const items = [
+  {
+    value: 1,
+    label: "Clothes",
+  },
+  {
+    value: 2,
+    label: "Furniture",
+  },
+];
 
 export default function App() {
+  const [category, setCategory] = useState(items[0]);
+
   return (
     <Screen>
+      <AppPicker
+        icon="apps"
+        placeholder="Category"
+        items={items}
+        selectedItem={category}
+        onSelectItem={(category) => setCategory(category)}
+      />
       <AppTextInput icon="email" placeholder="Username" />
     </Screen>
   );
